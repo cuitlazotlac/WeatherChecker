@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import {NavBar} from './components/shared/NavBar'
+
 const api = {
   key: "73a1d313044c88b7374f061069884b21",
   base: "https://api.openweathermap.org/data/2.5/"
@@ -38,7 +40,9 @@ function App() {
 return (
   // here if nothing we put the app - if it's above 16 degres then we put use the class app warm
   // it's here that we have to change the conditions to put continents background
-  <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'app warm' : 'app') : 'app'}>
+  <>
+  <NavBar />
+  <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'app-warm' : 'app-cold') : 'app'}>
     <main>
       <div className="search-box">
         <input 
@@ -61,11 +65,13 @@ return (
             {Math.round(weather.main.temp)}°c
           </div>
           <div className="weather">{weather.weather[0].main}</div>
+          {/* <div>{weather.weather.O.icon}</div> */}
         </div>
       </div>
       ) : ('')}
     </main>
   </div>
+  </>
 );
 }
 

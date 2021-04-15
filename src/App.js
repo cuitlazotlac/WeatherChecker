@@ -42,7 +42,7 @@ return (
   // it's here that we have to change the conditions to put continents background
   <>
   <NavBar />
-  <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'app-warm' : 'app-cold') : 'app'}>
+  <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'app-warm' : 'app-cold') : 'app-other'}>
     <main>
       <div className="search-box">
         <input 
@@ -58,7 +58,6 @@ return (
       <div>
         <div className="location-box">
           <div className="location">{weather.name}, {weather.sys.country}</div>
-          <div className="date">{dateBuilder(new Date())}</div>
         </div>
         <div className="weather-box">
           <div className="temp">
@@ -66,6 +65,8 @@ return (
           </div>
           <div className="weather">{weather.weather[0].main}</div>
           {/* <div>{weather.weather.O.icon}</div> */}
+          <p>DETAILS</p>
+          <div className="date">{dateBuilder(new Date())}</div>
         </div>
       </div>
       ) : ('')}

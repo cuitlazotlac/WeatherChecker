@@ -24,6 +24,10 @@
   color: white;
 }
 
+.app-other {
+  background-color: #FBFBFB;
+}
+
 .app-warm {
   background-color: aqua;
 }

@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* text-transform: uppercase; */
 }
 
 body {
-  font-family: 'montseratt', sans-serif;
-}
+  font-family: 'Titillium Web', sans-serif;}
 
 .app {
   /* background-image: url('./assets/cold-bg.jpg'); */
@@ -21,7 +23,7 @@ body {
 
 main {
   min-height: 100vh;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));
+  /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75)); */
   padding: 25px;
 }
 
@@ -31,7 +33,7 @@ main {
 }
 
 .search-box .search-bar {
-  display: block;
+  /* display: block; */
   width: 100%;
   padding: 15px;
 
@@ -40,11 +42,13 @@ main {
   border: none;
   outline: none;
 
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 0px 0px 16px 16px;
-  margin-top: -25px;
+  background-color: rgba(243, 205, 135, 0.5);
+  border-radius: 2px;
+  border: 1.85px solid #232323;
 
-  box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+  /* margin-top: -25px; */
+
+  /* box-shadow: 0px 5px rgba(0, 0, 0, 0.2); */
   
   color: #313131;
   font-size: 20px;
@@ -57,20 +61,15 @@ main {
 }
 
 .location-box .location {
-  color: #FFF;
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 25px;
   text-align: center;
-  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  text-transform: uppercase;
 }
 
 .location-box .date {
-  color: #FFF;
-  font-size: 20px;
-  font-weight: 300;
-  font-style: italic;
+  font-size: 15px;
   text-align: center;
-  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+  text-transform: uppercase;
 }
 
 .weather-box {

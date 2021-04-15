@@ -58,14 +58,22 @@ return (
       <div>
         <div className="location-box">
           <div className="location">{weather.name}, {weather.sys.country}</div>
+          <div className="weather">{weather.weather[0].main}</div>
         </div>
         <div className="weather-box">
           <div className="temp">
-            {Math.round(weather.main.temp)}°c
+            {/* {Math.round(weather.main.temp)}°c */}
+            {weather.main.temp}°c
           </div>
-          <div className="weather">{weather.weather[0].main}</div>
-          {/* <div>{weather.weather.O.icon}</div> */}
           <p>DETAILS</p>
+          <div>Temp Max:{' '}{weather.main.temp_max}°</div>
+          <div>Temp Min:{' '}{weather.main.temp_min}°</div>
+          <div>Feels like:{' '}{weather.main.feels_like}°</div>
+          <div>Humidity:{' '}{weather.main.humidity}</div>
+          <div>Wind:{' '}{weather.wind.speed}</div>
+          <div>Visibilty:{' '}{weather.visibility}</div>
+          <div>Coord Latitude:{' '}{weather.coord.lat}</div>
+          <div>Coord Longitude:{' '}{weather.coord.lon}</div>
           <div className="date">{dateBuilder(new Date())}</div>
         </div>
       </div>

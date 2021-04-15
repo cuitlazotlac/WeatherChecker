@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* text-transform: uppercase; */
 }
 
 body {
@@ -45,10 +44,6 @@ main {
   background-color: rgba(243, 205, 135, 0.5);
   border-radius: 2px;
   border: 1.85px solid #232323;
-
-  /* margin-top: -25px; */
-
-  /* box-shadow: 0px 5px rgba(0, 0, 0, 0.2); */
   
   color: #313131;
   font-size: 20px;
@@ -66,10 +61,11 @@ main {
   text-transform: uppercase;
 }
 
-.location-box .date {
+.weather-box .date {
   font-size: 15px;
   text-align: center;
   text-transform: uppercase;
+  border-top: 1.85px solid #232323;
 }
 
 .weather-box {
@@ -94,9 +90,9 @@ main {
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 }
 
-.weather-box .weather {
-  color: #FFF;
-  font-size: 48px;
-  font-weight: 700;
-  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+.location-box .weather {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-style: italic;
 }

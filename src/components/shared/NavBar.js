@@ -6,7 +6,7 @@ import logo from '../../ressources/images/logo.svg'
 export const NavBar = () => {
   return (
     <div>
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="light" variant="light">
         <Navbar.Brand href="/">
           <img
             alt=""

@@ -1,7 +1,15 @@
 import React, { useState } from "react";
-// import logo from './logo.svg';
-import "./App.css";
 import { NavBar } from "./components/shared/NavBar";
+
+import "./App.css";
+
+import sun_icon from "../src/ressources/images/weather-icons/001-sun.svg";
+import cloud_icon from "../src/ressources/images/weather-icons/002-cloud.svg";
+import heavy_rain_icon from "../src/ressources/images/weather-icons/003-heavy-rain.svg";
+import wind_icon from "../src/ressources/images/weather-icons/004-wind.svg";
+import fog_icon from "../src/ressources/images/weather-icons/005-fog.svg";
+import snow_icon from "../src/ressources/images/weather-icons/006-snow.svg";
+import thunderstorm_icon from "../src/ressources/images/weather-icons/007-thunderstorm.svg";
 
 const api = {
   key: "73a1d313044c88b7374f061069884b21",
@@ -23,6 +31,59 @@ function App() {
         });
     }
   };
+
+  switch (weather.weather[0].main) {
+    case (weather.weather[0].main = "Thunderstorm"):
+      console.log("Mangoes and papayas are $1.79 a pound.");
+      break;
+    case (weather.weather[0].main = "Drizzle"):
+      console.log("Mangoes and papayas are $2.79 a pound.");
+      break;
+    case (weather.weather[0].main = "Rain"):
+      console.log("Mangoes and papayas are $3.79 a pound.");
+      break;
+    case (weather.weather[0].main = "Snow"):
+      console.log("Mangoes and papayas are $4.79 a pound.");
+      break;
+    case (weather.weather[0].main = "Mist"):
+      console.log("Mangoes and papayas are $5.79 a pound.");
+      break;
+    case (weather.weather[0].main = "Smoke"):
+      console.log("Mangoes and papayas are $6.79 a pound.");
+      break;
+    case (weather.weather[0].main = "Haze"):
+      console.log("Mangoes and papayas are $7.79 a pound.");
+      break;
+    case (weather.weather[0].main = "DustMist"):
+      console.log("Mangoes and papayas are $8.79 a pound.");
+      break;
+    case (weather.weather[0].main = "Fog"):
+      console.log("Mangoes and papayas are $9.79 a pound.");
+      break;
+    case (weather.weather[0].main = "Sand"):
+      console.log("Mangoes and papayas are $10.79 a pound.");
+      break;
+    case (weather.weather[0].main = "Dust"):
+      console.log("Mangoes and papayas are $11.79 a pound.");
+      break;
+    case (weather.weather[0].main = "Ash"):
+      console.log("Mangoes and papayas are $12.79 a pound.");
+      break;
+    case (weather.weather[0].main = "Squall"):
+      console.log("Mangoes and papayas are $13.79 a pound.");
+      break;
+    case (weather.weather[0].main = "Tornado"):
+      console.log("Mangoes and papayas are $14.79 a pound.");
+      break;
+    case (weather.weather[0].main = "Clear"):
+      console.log("Mangoes and papayas are $15.79 a pound.");
+      break;
+    case (weather.weather[0].main = "Clouds"):
+      console.log("Mangoes and papayas are $16.79 a pound.");
+      break;
+    default:
+      console.log(`Sorry, we are out of ${weather.weather[0].main}.`);
+  }
 
   const dateBuilder = (d) => {
     let months = [
@@ -84,44 +145,46 @@ function App() {
           </div>
           {typeof weather.main != "undefined" ? (
             <div>
-              <div className="location-box">
+              <div className="location-block">
+                <div className="date">{dateBuilder(new Date())}</div>
                 <div className="location">
                   {weather.name}, {weather.sys.country}
                 </div>
-                <div className="date">{dateBuilder(new Date())}</div>
-                <div>Coord Latitude: {weather.coord.lat}</div>
-                <div>Coord Longitude: {weather.coord.lon}</div>
-                <div className="weather">{weather.weather[0].main}</div>
-                <div className="weather">{weather.weather[0].description}</div>
-                <div>
-                  <img></img>
+                <div className="coord-lat">
+                  Coord Latitude: {weather.coord.lat}
+                </div>
+                <div className="coord-lon">
+                  Coord Longitude: {weather.coord.lon}
                 </div>
               </div>
-              <div className="weather-box">
-                <div className="temp">
-                  {/* {Math.round(weather.main.temp)}°c */}
-                  {weather.main.temp}°c
+
+              <div>
+                <div className="weather">{weather.weather[0].main}</div>
+                <div className="weather">{weather.weather[0].description}</div>
+              </div>
+
+              <div className="icon">
+                <img></img>
+              </div>
+
+              {/* {Math.round(weather.main.temp)}°c */}
+
+              <div className="weather-block">
+                <div className="main-temp">{weather.main.temp}°c</div>
+                <div className="temp-max">
+                  Temp Max: {weather.main.temp_max}°
                 </div>
-                <div className="weather-details">
-                  <div className="main-temp">{weather.main.temp}°c</div>
-                  <div className="temp-max">
-                    Temp Max: {weather.main.temp_max}°
-                  </div>
-                  <div className="temp-min">
-                    Temp Min: {weather.main.temp_min}°
-                  </div>
-                  <div className="details-title">Details</div>
-                  <div className="temp-feeling">
-                    Feels like: {weather.main.feels_like}°
-                  </div>
-                  <div className="humidity">
-                    Humidity: {weather.main.humidity}
-                  </div>
-                  <div className="wind">Wind: {weather.wind.speed}</div>
-                  {/* <div className="visibility">
-                    Visibilty: {weather.visibility}
-                  </div> */}
+                <div className="temp-min">
+                  Temp Min: {weather.main.temp_min}°
                 </div>
+                <div className="details-title">Details</div>
+                <div className="temp-feeling">
+                  Feels like: {weather.main.feels_like}°
+                </div>
+                <div className="humidity">
+                  Humidity: {weather.main.humidity}
+                </div>
+                <div className="wind">Wind: {weather.wind.speed}</div>
               </div>
             </div>
           ) : (

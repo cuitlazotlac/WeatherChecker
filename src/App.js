@@ -88,6 +88,7 @@ function App() {
                 <div className="location">
                   {weather.name}, {weather.sys.country}
                 </div>
+                <div className="date">{dateBuilder(new Date())}</div>
                 <div>Coord Latitude: {weather.coord.lat}</div>
                 <div>Coord Longitude: {weather.coord.lon}</div>
                 <div className="weather">{weather.weather[0].main}</div>
@@ -101,20 +102,30 @@ function App() {
                   {/* {Math.round(weather.main.temp)}°c */}
                   {weather.main.temp}°c
                 </div>
-                <p>DETAILS</p>
                 <div className="weather-details">
-                  <div>Temp Max: {weather.main.temp_max}°</div>
-                  <div>Temp Min: {weather.main.temp_min}°</div>
-                  <div>Feels like: {weather.main.feels_like}°</div>
-                  <div>Humidity: {weather.main.humidity}</div>
-                  <div>Wind: {weather.wind.speed}</div>
-                  <div>Visibilty: {weather.visibility}</div>
-                  <div className="date">{dateBuilder(new Date())}</div>
+                  <div className="main-temp">{weather.main.temp}°c</div>
+                  <div className="temp-max">
+                    Temp Max: {weather.main.temp_max}°
+                  </div>
+                  <div className="temp-min">
+                    Temp Min: {weather.main.temp_min}°
+                  </div>
+                  <div className="details-title">Details</div>
+                  <div className="temp-feeling">
+                    Feels like: {weather.main.feels_like}°
+                  </div>
+                  <div className="humidity">
+                    Humidity: {weather.main.humidity}
+                  </div>
+                  <div className="wind">Wind: {weather.wind.speed}</div>
+                  {/* <div className="visibility">
+                    Visibilty: {weather.visibility}
+                  </div> */}
                 </div>
               </div>
             </div>
           ) : (
-            ""
+            "Here goes the initial part"
           )}
         </main>
       </div>

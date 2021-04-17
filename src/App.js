@@ -28,62 +28,62 @@ function App() {
           setWeather(result);
           setQuery("");
           console.log(result);
+          console.log(result.weather[0].main);
+          switch (result.weather[0].main) {
+            case "Thunderstorm":
+              console.log("Mangoes and papayas are $1.79 a pound.");
+              break;
+            case "Drizzle":
+              console.log("Mangoes and papayas are $2.79 a pound.");
+              break;
+            case "Rain":
+              console.log("Mangoes and papayas are $3.79 a pound.");
+              break;
+            case "Snow":
+              console.log("Mangoes and papayas are $4.79 a pound.");
+              break;
+            case "Mist":
+              console.log("Mangoes and papayas are $5.79 a pound.");
+              break;
+            case "Smoke":
+              console.log("Mangoes and papayas are $6.79 a pound.");
+              break;
+            case "Haze":
+              console.log("Mangoes and papayas are $7.79 a pound.");
+              break;
+            case "DustMist":
+              console.log("Mangoes and papayas are $8.79 a pound.");
+              break;
+            case "Fog":
+              console.log("Mangoes and papayas are $9.79 a pound.");
+              break;
+            case "Sand":
+              console.log("Mangoes and papayas are $10.79 a pound.");
+              break;
+            case "Dust":
+              console.log("Mangoes and papayas are $11.79 a pound.");
+              break;
+            case "Ash":
+              console.log("Mangoes and papayas are $12.79 a pound.");
+              break;
+            case "Squall":
+              console.log("Mangoes and papayas are $13.79 a pound.");
+              break;
+            case "Tornado":
+              console.log("Mangoes and papayas are $14.79 a pound.");
+              break;
+            case "Clear":
+              console.log("Mangoes and papayas are $15.79 a pound.");
+              break;
+            case "Clouds":
+              console.log("Mangoes and papayas are $16.79 a pound.");
+              break;
+            default:
+              console.log(`Sorry, we are out of ${result.weather[0].main}.`);
+          }
         });
     }
   };
-
-  switch (weather.weather[0].main) {
-    case (weather.weather[0].main = "Thunderstorm"):
-      console.log("Mangoes and papayas are $1.79 a pound.");
-      break;
-    case (weather.weather[0].main = "Drizzle"):
-      console.log("Mangoes and papayas are $2.79 a pound.");
-      break;
-    case (weather.weather[0].main = "Rain"):
-      console.log("Mangoes and papayas are $3.79 a pound.");
-      break;
-    case (weather.weather[0].main = "Snow"):
-      console.log("Mangoes and papayas are $4.79 a pound.");
-      break;
-    case (weather.weather[0].main = "Mist"):
-      console.log("Mangoes and papayas are $5.79 a pound.");
-      break;
-    case (weather.weather[0].main = "Smoke"):
-      console.log("Mangoes and papayas are $6.79 a pound.");
-      break;
-    case (weather.weather[0].main = "Haze"):
-      console.log("Mangoes and papayas are $7.79 a pound.");
-      break;
-    case (weather.weather[0].main = "DustMist"):
-      console.log("Mangoes and papayas are $8.79 a pound.");
-      break;
-    case (weather.weather[0].main = "Fog"):
-      console.log("Mangoes and papayas are $9.79 a pound.");
-      break;
-    case (weather.weather[0].main = "Sand"):
-      console.log("Mangoes and papayas are $10.79 a pound.");
-      break;
-    case (weather.weather[0].main = "Dust"):
-      console.log("Mangoes and papayas are $11.79 a pound.");
-      break;
-    case (weather.weather[0].main = "Ash"):
-      console.log("Mangoes and papayas are $12.79 a pound.");
-      break;
-    case (weather.weather[0].main = "Squall"):
-      console.log("Mangoes and papayas are $13.79 a pound.");
-      break;
-    case (weather.weather[0].main = "Tornado"):
-      console.log("Mangoes and papayas are $14.79 a pound.");
-      break;
-    case (weather.weather[0].main = "Clear"):
-      console.log("Mangoes and papayas are $15.79 a pound.");
-      break;
-    case (weather.weather[0].main = "Clouds"):
-      console.log("Mangoes and papayas are $16.79 a pound.");
-      break;
-    default:
-      console.log(`Sorry, we are out of ${weather.weather[0].main}.`);
-  }
 
   const dateBuilder = (d) => {
     let months = [

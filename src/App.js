@@ -20,18 +20,19 @@ function App() {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
 
-  const search = (evt) => {
+  const search = (evt, weather_icon) => {
     if (evt.key === "Enter") {
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
         .then((res) => res.json())
         .then((result) => {
           setWeather(result);
           setQuery("");
-          console.log(result);
-          console.log(result.weather[0].main);
+          // console.log(result);
+          // console.log(result.weather[0].main);
           switch (result.weather[0].main) {
             case "Thunderstorm":
               console.log("Mangoes and papayas are $1.79 a pound.");
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"
               break;
             case "Drizzle":
               console.log("Mangoes and papayas are $2.79 a pound.");
@@ -74,17 +75,20 @@ function App() {
               break;
             case "Clear":
               console.log("Mangoes and papayas are $15.79 a pound.");
+              weather_icon = sun_icon
               break;
             case "Clouds":
-              console.log("Mangoes and papayas are $16.79 a pound.");
+              console.log("Mangoes and papayas are $16.79 a pound.");             
               break;
             default:
               console.log(`Sorry, we are out of ${result.weather[0].main}.`);
           }
         });
     }
+    console.log(search.weather_icon)
+    console.log(weather_icon)
   };
-
+  
   const dateBuilder = (d) => {
     let months = [
       "January",
@@ -164,7 +168,7 @@ function App() {
               </div>
 
               <div className="icon">
-                <img></img>
+                {/* <img src={search.weather_icon}/> */}
               </div>
 
               {/* {Math.round(weather.main.temp)}°c */}

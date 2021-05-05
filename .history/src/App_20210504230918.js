@@ -27,11 +27,8 @@ function App() {
         .then((result) => {
           setWeather(result);
           setQuery("");
-          var link_1 = "https://openweathermap.org/img/wn/";
-          var link_2 = ".png";
-          var link = link_1.concat(link_2)
-          // var value = (document.querySelector(".icon").src =
-          //   "https://openweathermap.org/img/wn/" + result.icon + ".png");
+          let value = (document.querySelector(".icon").src =
+            "https://openweathermap.org/img/wn/" + result.icon + ".png");
         });
     }
   };
@@ -117,7 +114,7 @@ function App() {
               <div>
                 <h2>Here goes the image </h2>
                 <div className="weather">{weather.weather[0].icon}</div>
-                <img src="https://openweathermap.org/img/wn/${weather.weather[0].icon}.png"></img>
+                <img src="https://openweathermap.org/img/wn/01n.png"></img>
               </div>
 
               {/* {Math.round(weather.main.temp)}°c */}

@@ -20,22 +20,91 @@ function App() {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
 
-  const search = (evt) => {
+  const search = (evt, weather_icon) => {
     if (evt.key === "Enter") {
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
         .then((res) => res.json())
         .then((result) => {
           setWeather(result);
           setQuery("");
-          var link_1 = "https://openweathermap.org/img/wn/";
-          var link_2 = ".png";
-          var link = link_1.concat(link_2)
-          // var value = (document.querySelector(".icon").src =
-          //   "https://openweathermap.org/img/wn/" + result.icon + ".png");
+          // console.log(result);
+          // console.log(result.weather[0].main);
+          switch (result.weather[0].main) {
+            case "Thunderstorm":
+              console.log("Mangoes and papayas are $1.79 a pound.");
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"
+              break;
+            case "Drizzle":
+              console.log("Mangoes and papayas are $2.79 a pound.");
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"
+              break;
+            case "Rain":
+              console.log("Mangoes and papayas are $3.79 a pound.");
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"
+              break;
+            case "Snow":
+              console.log("Mangoes and papayas are $4.79 a pound.");
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"
+              break;
+            case "Mist":
+              console.log("Mangoes and papayas are $5.79 a pound.");
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"
+              break;
+            case "Smoke":
+              console.log("Mangoes and papayas are $6.79 a pound.");
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"
+              break;
+            case "Haze":
+              console.log("Mangoes and papayas are $7.79 a pound.");
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"
+              break;
+            case "DustMist":
+              console.log("Mangoes and papayas are $8.79 a pound.");
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"
+              break;
+            case "Fog":
+              console.log("Mangoes and papayas are $9.79 a pound.");
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"
+              break;
+            case "Sand":
+              console.log("Mangoes and papayas are $10.79 a pound.");
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"
+              break;
+            case "Dust":
+              console.log("Mangoes and papayas are $11.79 a pound.");
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"
+              break;
+            case "Ash":
+              console.log("Mangoes and papayas are $12.79 a pound.");
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"
+              break;
+            case "Squall":
+              console.log("Mangoes and papayas are $13.79 a pound.");
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"
+              break;
+            case "Tornado":
+              console.log("Mangoes and papayas are $14.79 a pound.");
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"
+              break;
+            case "Clear":
+              console.log("Mangoes and papayas are $15.79 a pound.");
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"
+              weather_icon = sun_icon
+              break;
+            case "Clouds":
+              console.log("Mangoes and papayas are $16.79 a pound."); 
+              weather_icon = "../src/ressources/images/weather-icons/001-sun.svg"           
+              break;
+            default:
+              console.log(`Sorry, we are out of ${result.weather[0].main}.`);
+          }
+          return weather_icon
         });
     }
+    console.log(search.weather_icon)
+    console.log(weather_icon)
   };
-
+  
   const dateBuilder = (d) => {
     let months = [
       "January",
@@ -115,19 +184,18 @@ function App() {
               </div>
 
               <div>
-                <h2>Here goes the image </h2>
-                <div className="weather">{weather.weather[0].icon}</div>
-                <img src="https://openweathermap.org/img/wn/${weather.weather[0].icon}.png"></img>
+                <img src={search.sun_icon}/>
               </div>
 
               {/* {Math.round(weather.main.temp)}°c */}
+
               <div className="weather-block">
                 <div className="main-temp">{weather.main.temp}°c</div>
                 <div className="temp-max">
                   Temp Max: {weather.main.temp_max}°
                 </div>
                 <div className="temp-min">
-                  Temp Min: {weather.main.temp_Îmin}°
+                  Temp Min: {weather.main.temp_min}°
                 </div>
                 <div className="details-title">Details</div>
                 <div className="temp-feeling">

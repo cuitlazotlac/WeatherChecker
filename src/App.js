@@ -23,7 +23,7 @@ function App() {
   var img = new Image();
   var img2 = document.createElement("img"); // Use DOM HTMLImageElement
 
-  var imageName = require('../src/ressources/images/weather-icons/001-sun.svg')
+  var imageName = require("../src/ressources/images/weather-icons/001-sun.svg");
 
   const search = (evt) => {
     if (evt.key === "Enter") {
@@ -154,9 +154,9 @@ function App() {
         className={
           typeof weather.main != "undefined"
             ? weather.main.temp > 16
-              ? "app-warm"
-              : "app-cold"
-            : "app-other"
+              ? "app warm"
+              : "app"
+            : "app"
         }
       >
         <main>
@@ -191,13 +191,13 @@ function App() {
               </div>
 
               <div>
-                <h2>
+                {/* <h2>
                   Here goes the image
                   <img src={img2} />
-                  {/* <img src={imageName} /> */}
-                </h2>
-                <div className="weather">{weather.weather[0].icon}</div>
+                  <img src={imageName} />
+                </h2> */}
                 <img
+                  className="weather-icon"
                   src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
                 ></img>
 

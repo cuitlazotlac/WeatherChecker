@@ -1,4 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
 
+.date {
+  font-weight: 600;
+  text-align: center;
+  font-size: 15px;
+}
 
+.location {
+  font-weight: 900;
+  text-align: center;
+  font-size: 45px;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+.coord-lat {
+  text-align: center;
+  font-weight: 200;
+}
+
+.coord-lon {
+  text-align: center;
+  font-weight: 200;
+}
+
+.weather {
+  font-weight: 900;
+  text-align: center;
+  font-size: 25px;
+  text-transform: uppercase;
+  @media screen and (max-width: 992px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 15px;
+  }
+}
+
+.weather-block {
+  text-align: center;
+}
+
+.main-temp {
+  font-weight: 900;
+  font-size: 55px;
+  text-transform: uppercase;
+  @media screen and (max-width: 992px) {
+    font-size: 32px;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 32px;
+  }
+}
+
+.temp-max {
+  font-weight: 200;
+  font-size: 25px;
+  @media screen and (max-width: 992px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 15px;
+  }
+}
+
+.temp-min {
+  font-weight: 200;
+  font-size: 25px;
+  @media screen and (max-width: 992px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 15px;
+  }
+}
+
+.details-title {
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 400;
+  font-size: 25px;
+  border-bottom: 1px solid black;
+  @media screen and (max-width: 992px) {
+    font-size: 15px;
+    text-align: right;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 15px;
+    text-align: right;
+  }
+}
+
+.temp-feeling {
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 200;
+  font-size: 20px;
+  @media screen and (max-width: 992px) {
+    font-size: 15px;
+    text-align: right;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 15px;
+    text-align: right;
+  }
+}
+
+.humidity {
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 200;
+  font-size: 20px;
+  @media screen and (max-width: 992px) {
+    font-size: 15px;
+    text-align: right;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 15px;
+    text-align: right;
+  }
+}
+
+.wind {
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 200;
+  font-size: 20px;
+  @media screen and (max-width: 992px) {
+    font-size: 15px;
+    text-align: right;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 15px;
+    text-align: right;
+  }
+}
+
+.weather-icon{
+    width: 90px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

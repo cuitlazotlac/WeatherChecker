@@ -2,6 +2,7 @@
 
 .App {
   text-align: center;
+  background-color: #FAE7C3;
 }
 
 .App-logo {
@@ -23,20 +24,31 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #FAE7C3;
 }
 
-.app-other {
-  background-color: #fbfbfb;
+// .app-other {
+//   background-color: #fbfbfb;
+// }
+
+// .app-warm {
+//   background-color: aqua;
+// }
+
+// .app-cold {
+//   background-color: burlywood;
+// }
+.app {
+  background-image: url('./ressources/images/cold-bg.jpeg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease;
 }
 
-.app-warm {
-  background-color: aqua;
+.app.warm {
+  background-image: url('./ressources/images/warm-bg.jpeg');
 }
 
-.app-cold {
-  background-color: burlywood;
-}
 
 .App-link {
   color: #61dafb;
@@ -170,7 +182,7 @@ main {
 
 .weather-block {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;

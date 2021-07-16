@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import { NavBar } from "./components/shared/NavBar";
+import moment from "moment";
+import "moment-timezone";
+
+import logo from "../src/ressources/images/logo.svg";
+import github from "../src/ressources/images/github.png";
 
 import "./App.scss";
 
@@ -18,12 +23,10 @@ function App() {
 
   function calcTime(city, offset) {
     var d = new Date();
-
     var utc = d.getTime() + d.getTimezoneOffset() * 60000;
-
     var nd = new Date(utc + 3600000 * offset);
-
-    return "The local time in " + city + " is " + nd.toLocaleString();
+    var date = "The local time in " + city + " is " + nd.toLocaleString();
+    console.log(date);
   }
 
   const search = (evt) => {
@@ -33,6 +36,11 @@ function App() {
         .then((result) => {
           setWeather(result);
           setQuery("");
+          // const sunrise = new Date((result.dt + result.timezone) * 1000);
+          // console.log(sunrise);
+          // console.log("below the second test");
+          // const test = new Date((result.dt) * 1000);
+          // console.log(test);
         });
     }
   };
@@ -66,6 +74,7 @@ function App() {
     let date = d.getDate();
     let month = months[d.getMonth()];
     let year = d.getFullYear();
+    const hour = d.getHours();
 
     return `${day} ${date} ${month} ${year}`;
   };
@@ -81,7 +90,7 @@ function App() {
             ? weather.main.temp > 16
               ? "app warm"
               : "app"
-            : "app"
+            : "intro"
         }
       >
         <main>
@@ -149,7 +158,12 @@ function App() {
               </div>
             </div>
           ) : (
-            <div>Here goes the initial part</div>
+            <div className="welcome_message">
+              <img className="icon" src={logo} />
+              <h1>Welcome to the Weather Checker WebApp</h1>
+              <h2>Look for the weather in the favorite city !</h2>
+              <img className="icon" src={github} />
+            </div>
           )}
         </main>
       </div>

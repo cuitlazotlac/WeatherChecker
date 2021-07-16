@@ -149,7 +149,7 @@ function App() {
               </div>
             </div>
           ) : (
-            "Here goes the initial part"
+            <div>Here goes the initial part</div>
           )}
         </main>
       </div>

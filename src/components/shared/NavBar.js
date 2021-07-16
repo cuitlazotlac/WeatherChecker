@@ -1,7 +1,9 @@
 import React from "react";
-import Navbar from 'react-bootstrap/Navbar'
+import Navbar from "react-bootstrap/Navbar";
 
-import logo from '../../ressources/images/logo.svg'
+import logo from "../../ressources/images/logo.svg";
+import github from "../../ressources/images/github-dark.png";
+
 
 export const NavBar = () => {
   return (
@@ -16,6 +18,11 @@ export const NavBar = () => {
             className="d-inline-block align-top"
           />{" "}
           Weather Checker
+          {/* <img
+            alt=""
+            src={github}
+            className="github-icon"
+          />{" "} */}
         </Navbar.Brand>
       </Navbar>
     </div>
